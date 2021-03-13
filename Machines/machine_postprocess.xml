@@ -185,6 +185,58 @@
     </components>
   </machine>
 
+  <machine name="container" hostname="container">
+    <timeseries_pes queue="regular" nodes="1" pes_per_node="18" wallclock="12:00:00">18</timeseries_pes>
+    <xconform_pes queue="regular"   nodes="1" pes_per_node="18" wallclock="12:00:00">18</xconform_pes>
+    <ocn_remap_pes queue="regular"  nodes="1" pes_per_node="18" wallclock="08:00:00">18</ocn_remap_pes>
+    <mpi_command>mpirun</mpi_command>
+    <pythonpath></pythonpath>
+    <f2py fcompiler="gnu95" f77exec="gfortran">f2py</f2py>
+    <za>
+      <compiler>gfortran</compiler>
+      <flags>-c -g -O2</flags>
+      <include></include>
+      <libs></libs>
+    </za>
+    <reset_modules>
+    </reset_modules>
+    <modules>
+    </modules>
+    <components>
+      <component name="atm">
+	<averages_pes    queue="regular" nodes="4" pes_per_node="18" wallclock="01:00:00">72</averages_pes>
+	<diagnostics_pes queue="regular" nodes="1" pes_per_node="18" wallclock="01:00:00">18</diagnostics_pes>
+	<regrid_pes      queue="regular" nodes="1" pes_per_node="16" wallclock="01:00:00">36</regrid_pes>
+	<obs_root>/glade/p/cesm/amwg/amwg_data</obs_root>
+      </component>
+      <component name="ice">
+	<averages_pes queue="regular" nodes="4" pes_per_node="4" wallclock="01:00:00">16</averages_pes>
+	<diagnostics_pes queue="regular" nodes="1" pes_per_node="8" wallclock="01:00:00">8</diagnostics_pes>
+	<obs_root>/glade/p/cesm/pcwg/ice/data</obs_root>
+      </component>
+      <component name="lnd">
+	<averages_pes queue="regular" nodes="4" pes_per_node="18" wallclock="01:00:00">72</averages_pes>
+	<diagnostics_pes queue="regular" nodes="1" pes_per_node="16" wallclock="01:00:00">16</diagnostics_pes>
+	<regrid_pes queue="regular" nodes="1" pes_per_node="12" wallclock="01:00:00">12</regrid_pes>
+	<obs_root>/glade/p/cesm/lmwg/diag/lnd_diag_data</obs_root>
+      </component>
+      <component name="ocn">
+	<averages_pes queue="regular" nodes="4" pes_per_node="4" wallclock="01:00:00">16</averages_pes>
+	<diagnostics_pes queue="regular" nodes="1" pes_per_node="16" wallclock="01:00:00">16</diagnostics_pes>
+	<obs_root>/glade/p/cesm/</obs_root>
+      </component>
+      <component name="ilamb">
+	<diagnostics_pes queue="regular" nodes="1" pes_per_node="8" wallclock="00:30:00">8</diagnostics_pes>
+	<initialize_pes queue="share" nodes="1" pes_per_node="1" wallclock="00:01:00">1</initialize_pes>
+	<obs_root>/glade/p/cesm/lmwg_dev/oleson/ILAMB/ILAMB_all</obs_root>
+      </component>
+      <component name="iomb">
+	<diagnostics_pes queue="regular" nodes="1" pes_per_node="8" wallclock="00:30:00">8</diagnostics_pes>
+	<initialize_pes queue="share" nodes="1" pes_per_node="1" wallclock="00:01:00">1</initialize_pes>
+	<obs_root>/glade/p/cesm/omwg/obs_data/IOMB</obs_root>
+      </component>
+    </components>
+  </machine>
 <!-- TODO - Edison settings need to be updated -->
   <machine name="edison" hostname="edison">
     <timeseries_pes queue="regular" wallclock="02:00">144</timeseries_pes>
