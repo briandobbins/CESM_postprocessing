@@ -237,6 +237,7 @@
       </component>
     </components>
   </machine>
+
 <!-- TODO - Edison settings need to be updated -->
   <machine name="edison" hostname="edison">
     <timeseries_pes queue="regular" wallclock="02:00">144</timeseries_pes>
