@@ -1,0 +1,1 @@
+export PYTHONPATH=${pp_dir}/cesm-env2/lib/python3.7/site-packages
