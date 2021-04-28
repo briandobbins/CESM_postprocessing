@@ -195,8 +195,8 @@
     <za>
       <compiler>gfortran</compiler>
       <flags>-c -g -O2</flags>
-      <include>-I/usr/local/include</include>
-      <libs>-L/usr/local/lib -lnetcdff -lnetcdf</libs>
+      <include>-I/usr/local/include -I/usr/include</include>
+      <libs>-L/usr/local/lib -L/usr/lib64 -lnetcdff -lnetcdf</libs>
     </za>
     <reset_modules>
     </reset_modules>
